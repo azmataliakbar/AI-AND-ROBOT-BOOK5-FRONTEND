@@ -1,0 +1,256 @@
+/* SearchBar.module.css */
+
+.searchContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  min-height: calc(100vh - 120px);
+}
+
+/* Header */
+.searchHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.searchHeader h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #0ea5e9;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.searchHeader p {
+  color: #64748b;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+/* Search Bar Wrapper */
+.searchBarWrapper {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+/* Results Section */
+.resultsSection {
+  margin-top: 3rem;
+}
+
+.resultsHeader {
+  margin-bottom: 1.5rem;
+}
+
+.resultsHeader h2 {
+  color: #0f172a;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Results Grid */
+.results {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.resultCard {
+  display: block;
+  padding: 2rem;
+  background: white;
+  border: 2px solid #e0f2fe;
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.resultCard:hover {
+  border-color: #0ea5e9;
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.15);
+  transform: translateY(-4px);
+  text-decoration: none;
+}
+
+.resultHeader {
+  margin-bottom: 1rem;
+}
+
+.moduleTag {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.resultTitle {
+  color: #0f172a;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.resultPreview {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.resultFooter {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.readMore {
+  color: #0ea5e9;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* No Results */
+.noResults {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.noResultsIcon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.noResults h3 {
+  color: #0f172a;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.noResults p {
+  color: #64748b;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.quickLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.quickLink {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.quickLink:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* Popular Topics */
+.popularTopics {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.popularTopics h2 {
+  color: #0f172a;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.topicGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.topicButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background: white;
+  border: 2px solid #e0f2fe;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.topicButton:hover {
+  border-color: #0ea5e9;
+  background: #f0f9ff;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(14, 165, 233, 0.1);
+}
+
+.topicIcon {
+  font-size: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .searchContainer {
+    padding: 2rem 1rem;
+  }
+
+  .resultCard {
+    padding: 1.5rem;
+  }
+
+  .resultTitle {
+    font-size: 1.2rem;
+  }
+
+  .topicGrid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .topicButton {
+    padding: 1rem;
+  }
+}
+
+/* Add these new styles to search.module.css */
+
+.moduleTag {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Module-specific colors */
+.moduleTag[data-module="1"] {
+  background-color: #0ea5e9; /* Cyan - ROS 2 */
+}
+
+.moduleTag[data-module="2"] {
+  background-color: #8b5cf6; /* Purple - Simulation */
+}
+
+.moduleTag[data-module="3"] {
+  background-color: #10b981; /* Green - Isaac */
+}
+
+.moduleTag[data-module="4"] {
+  background-color: #f59e0b; /* Orange - VLA */
+}

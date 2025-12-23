@@ -1,0 +1,440 @@
+/**
+ * Custom CSS for AI and Robotics Book Platform
+ */
+
+/* Set light blue theme as primary */
+:root {
+  --ifm-color-primary: #0EA5E9;
+  --ifm-color-primary-dark: #0284C7;
+  --ifm-color-primary-darker: #0369A1;
+  --ifm-color-primary-darkest: #075985;
+  --ifm-color-primary-light: #38BDF8;
+  --ifm-color-primary-lighter: #7DD3FC;
+  --ifm-color-primary-lightest: #BAE6FD;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  
+  /* Background colors */
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #f8fafc;
+  
+  /* Text colors */
+  --ifm-font-color-base: #0f172a;
+  --ifm-font-color-secondary: #475569;
+  
+  /* Footer colors */
+  --ifm-footer-background-color: #0f172a;
+  --ifm-footer-color: #e2e8f0;
+  --ifm-footer-link-color: #cbd5e1;
+  --ifm-footer-link-hover-color: #0ea5e9;
+  --ifm-footer-title-color: #0ea5e9;
+}
+
+/* Dark mode colors */
+[data-theme='dark'] {
+  --ifm-color-primary: #38bdf8;
+  --ifm-color-primary-dark: #0ea5e9;
+  --ifm-color-primary-darker: #0284c7;
+  --ifm-color-primary-darkest: #0369a1;
+  --ifm-color-primary-light: #7dd3fc;
+  --ifm-color-primary-lighter: #bae6fd;
+  --ifm-color-primary-lightest: #e0f2fe;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  
+  --ifm-background-color: #0f172a;
+  --ifm-background-surface-color: #1e293b;
+  --ifm-font-color-base: #f1f5f9;
+  --ifm-font-color-secondary: #cbd5e1;
+}
+
+/* Hero section styling */
+.hero {
+  background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%) !important;
+  color: white !important;
+}
+
+.hero--primary {
+  background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%) !important;
+  color: white !important;
+}
+
+.hero__title {
+  color: white !important;
+  font-size: clamp(2rem, 5vw, 3rem) !important;
+  font-weight: 700 !important;
+}
+
+.hero__subtitle {
+  color: #e0f2fe !important;
+  font-size: clamp(1.1rem, 3vw, 1.5rem) !important;
+}
+
+/* Button styling */
+.button--secondary {
+  background-color: #f59e0b !important;
+  color: white !important;
+  border: none !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+.button--secondary:hover {
+  background-color: #d97706 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for code blocks */
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+/* Custom styling for navigation */
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+[data-theme='dark'] .navbar {
+  background-color: #0f172a;
+}
+
+/* Styling for sidebar */
+.sidebar {
+  background-color: #f8fafc;
+}
+
+[data-theme='dark'] .sidebar {
+  background-color: #1e293b;
+}
+
+/* FOOTER STYLING - Dark & Visible */
+.footer {
+  background-color: #0f172a !important;
+  color: #e2e8f0 !important;
+  padding: 3rem 0 !important;
+}
+
+.footer__title {
+  color: #0ea5e9 !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+  margin-bottom: 1rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer__item {
+  color: #cbd5e1 !important;
+  line-height: 2 !important;
+}
+
+.footer__link-item {
+  color: #cbd5e1 !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease !important;
+  font-weight: 400 !important;
+}
+
+.footer__link-item:hover {
+  color: #0ea5e9 !important;
+  text-decoration: none !important;
+}
+
+.footer__copyright {
+  color: #94a3b8 !important;
+  margin-top: 2rem !important;
+  padding-top: 2rem !important;
+  border-top: 1px solid #334155 !important;
+  text-align: center !important;
+}
+
+.footer__bottom {
+  border-top: 1px solid #334155;
+  padding-top: 2rem;
+  color: #94a3b8 !important;
+}
+
+[data-theme='dark'] .footer {
+  background-color: #020617 !important;
+}
+
+/* Fluid typography using clamp() */
+h1 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--ifm-font-color-base);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  color: var(--ifm-font-color-base);
+}
+
+h3 {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--ifm-font-color-base);
+}
+
+h4 {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--ifm-font-color-base);
+}
+
+p {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  color: var(--ifm-font-color-secondary);
+}
+
+/* Additional custom styles for robotics content */
+.robotics-diagram {
+  border: 1px solid var(--ifm-color-primary-light);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: #f0f9ff;
+}
+
+[data-theme='dark'] .robotics-diagram {
+  background-color: #0c4a6e;
+  border-color: var(--ifm-color-primary-darker);
+}
+
+/* Styling for important notes */
+.admonition.admonition-note {
+  border-left-color: var(--ifm-color-primary);
+}
+
+/* Custom styling for interactive elements */
+.interactive-element {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.interactive-element:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Features section */
+.features {
+  background-color: #f8fafc;
+  padding: 4rem 0;
+}
+
+.features h3 {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.features p {
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 996px) {
+  .hero--primary {
+    padding: 1rem;
+  }
+  
+  .footer {
+    padding: 2rem 0 !important;
+  }
+}
+
+/* Improve link visibility */
+a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--ifm-color-primary-dark);
+  text-decoration: underline;
+}
+
+/* Author section styling */
+.authorSection {
+  padding: 4rem 0;
+  background-color: #f0f9ff;
+  text-align: center;
+}
+
+.authorSection h2 {
+  color: #0f172a;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.authorInfo {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.authorInfo p {
+  color: #334155;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.authorInfo strong {
+  color: #0ea5e9;
+  font-weight: 600;
+}
+
+.authorInfo a {
+  color: #0ea5e9;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.authorInfo a:hover {
+  color: #0284c7;
+  text-decoration: underline;
+}
+
+/* Giant Robot Emoji for Intro Page */
+.robot-hero {
+  text-align: center;
+  margin: 3rem 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-radius: 20px;
+}
+
+.robot-hero-emoji {
+  font-size: 10rem;
+  line-height: 1;
+  display: block;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Responsive - smaller on mobile */
+@media (max-width: 768px) {
+  .robot-hero-emoji {
+    font-size: 10rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .robot-hero-emoji {
+    font-size: 6rem;
+  }
+}
+
+/* Smaller Robot Emoji for Blog Posts */
+.blog-hero {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-radius: 16px;
+}
+
+.blog-hero-emoji {
+  font-size: 8rem;  /* Smaller than intro */
+  line-height: 1;
+  display: block;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.1));
+}
+
+/* Responsive - even smaller on mobile */
+@media (max-width: 768px) {
+  .blog-hero-emoji {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-hero-emoji {
+    font-size: 3rem;
+  }
+}
+
+
+
+/* Ultra-bold navbar title with shadow */
+/* ============================================
+   NAVBAR STYLING - BALANCED & BOLD
+   ============================================ */
+
+/* Compact navbar height */
+.navbar {
+  padding: 0.75rem 2rem !important;
+  min-height: 70px !important;
+}
+
+/* Bold navbar title - centered vertically */
+.navbar__title {
+  font-size: 2rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  color: #0f172a !important;
+  line-height: 1.1 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Make robot emoji pop */
+.navbar__title::first-letter {
+  font-size: 2.5rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Responsive */
+@media (max-width: 996px) {
+  .navbar {
+    padding: 0.5rem 1rem !important;
+    min-height: 60px !important;
+  }
+  
+  .navbar__title {
+    font-size: 1.5rem !important;
+  }
+  
+  .navbar__title::first-letter {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    padding: 0.5rem 1rem !important;
+    min-height: 55px !important;
+  }
+  
+  .navbar__title {
+    font-size: 1.2rem !important;
+  }
+  
+  .navbar__title::first-letter {
+    font-size: 1.5rem;
+  }
+}
+
+.main-wrapper {
+  padding-top: calc(var(--ifm-navbar-height) - 12px);
+}

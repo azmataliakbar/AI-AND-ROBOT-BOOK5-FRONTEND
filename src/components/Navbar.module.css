@@ -1,0 +1,441 @@
+/* Navbar.module.css - COMPLETE WORKING VERSION */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 0.75rem 2rem;
+  border-bottom: 3px solid #0ea5e9;
+}
+
+.navInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* LEFT SIDE */
+.leftSide {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* RIGHT SIDE */
+.rightSide {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* BRAND/LOGO */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.brand:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.robotIcon {
+  font-size: 2.5rem;
+  animation: float 3s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(-5px); 
+  }
+}
+
+.brandText {
+  color: #0f172a;
+  font-weight: 800;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* DESKTOP NAV LINKS */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #334155;
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  background: #f0f9ff;
+  color: #0ea5e9;
+  text-decoration: none;
+}
+
+.navLink.active {
+  background: #e0f2fe;
+  color: #0ea5e9;
+  font-weight: 600;
+}
+
+/* NAV EMOJI */
+.navEmoji {
+  font-size: 1.1rem;
+  line-height: 1;
+  margin-right: 0.25rem;
+}
+
+/* DESKTOP SEARCH */
+.searchForm {
+  display: flex;
+  align-items: center;
+  background: #f1f5f9;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.searchForm:focus-within {
+  border-color: #0ea5e9;
+  background: white;
+}
+
+.searchInput {
+  background: transparent;
+  border: none;
+  color: #0f172a;
+  padding: 0.4rem;
+  font-size: 0.95rem;
+  width: 200px;
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: #94a3b8;
+}
+
+.searchButton {
+  background: transparent;
+  border: none;
+  color: #0ea5e9;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0.2rem;
+  transition: transform 0.2s ease;
+}
+
+.searchButton:hover {
+  transform: scale(1.15);
+}
+
+/* MOBILE TOGGLE BUTTON */
+.mobileToggle {
+  display: none;
+  background: #0ea5e9;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  min-height: 50px;
+  transition: background 0.3s ease;
+}
+
+.mobileToggle:hover {
+  background: #0284c7;
+}
+
+.mobileToggle:active {
+  background: #0369a1;
+}
+
+/* MOBILE MENU */
+.mobileMenu {
+  background: white;
+  padding: 1rem;
+  border-top: 2px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+/* MOBILE SEARCH FORM */
+.mobileSearchForm {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.mobileSearchInput {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.mobileSearchInput:focus {
+  border-color: #0ea5e9;
+}
+
+.mobileSearchButton {
+  padding: 0.75rem 1.5rem;
+  background: #0ea5e9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  flex-shrink: 0;
+}
+
+.mobileSearchButton:hover {
+  background: #0284c7;
+}
+
+.mobileSearchButton:active {
+  background: #0369a1;
+}
+
+/* MOBILE NAV LINKS */
+.mobileLink {
+  display: flex;
+  align-items: center;
+  color: #334155;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  margin-bottom: 0.5rem;
+  background: #f8fafc;
+}
+
+.mobileLink:hover {
+  background: #f0f9ff;
+  color: #0ea5e9;
+  text-decoration: none;
+}
+
+.mobileLink:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+/* Tablets and small laptops (996px and below) */
+@media (max-width: 996px) {
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+
+  .navInner {
+    gap: 0.75rem;
+  }
+
+  .leftSide {
+    gap: 1rem;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .brand {
+    flex: 1;
+    min-width: 0;
+    max-width: calc(100% - 70px);
+  }
+
+  .brandText {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Hide desktop nav and search */
+  .navLinks {
+    display: none !important;
+  }
+
+  .rightSide {
+    display: none !important;
+  }
+
+  /* Show mobile toggle */
+  .mobileToggle {
+    display: flex !important;
+  }
+
+  .robotIcon {
+    font-size: 2rem;
+  }
+
+  .brandText {
+    font-size: 1.2rem;
+  }
+}
+
+/* Large phones (768px and below) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.7rem 1rem;
+  }
+
+  .brand {
+    max-width: calc(100% - 65px);
+  }
+
+  .robotIcon {
+    font-size: 1.9rem;
+  }
+
+  .brandText {
+    font-size: 1.15rem;
+  }
+
+  .mobileToggle {
+    font-size: 1.8rem;
+    min-width: 50px;
+    min-height: 50px;
+  }
+}
+
+/* Standard phones (576px and below) */
+@media (max-width: 576px) {
+  .navbar {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .navInner {
+    gap: 0.5rem;
+  }
+
+  .leftSide {
+    gap: 0.5rem;
+  }
+
+  .brand {
+    max-width: calc(100% - 60px);
+  }
+
+  .robotIcon {
+    font-size: 1.8rem;
+  }
+
+  .brandText {
+    font-size: 1rem;
+  }
+
+  .mobileToggle {
+    font-size: 1.8rem;
+    min-width: 48px;
+    min-height: 48px;
+  }
+
+  .mobileMenu {
+    padding: 0.75rem;
+  }
+
+  .mobileLink {
+    padding: 0.7rem 0.85rem;
+    font-size: 1rem;
+  }
+}
+
+/* Small phones (400px and below) */
+@media (max-width: 400px) {
+  .navbar {
+    padding: 0.5rem;
+  }
+
+  .navInner {
+    gap: 0.4rem;
+  }
+
+  .leftSide {
+    gap: 0.4rem;
+  }
+
+  .brand {
+    max-width: calc(100% - 55px);
+  }
+
+  .robotIcon {
+    font-size: 1.5rem;
+  }
+
+  .brandText {
+    font-size: 0.9rem;
+  }
+
+  .mobileToggle {
+    font-size: 1.6rem;
+    min-width: 45px;
+    min-height: 45px;
+  }
+}
+
+/* Very small phones (360px and below) */
+@media (max-width: 360px) {
+  .navbar {
+    padding: 0.4rem;
+  }
+
+  .brand {
+    max-width: calc(100% - 50px);
+  }
+
+  .robotIcon {
+    font-size: 1.4rem;
+  }
+
+  .brandText {
+    font-size: 0.85rem;
+  }
+
+  .mobileToggle {
+    font-size: 1.5rem;
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
