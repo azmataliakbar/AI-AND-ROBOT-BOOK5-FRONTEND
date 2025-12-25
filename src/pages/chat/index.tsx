@@ -1,6 +1,6 @@
 // src/pages/chat/index.tsx
-import React, { useState, useRef, useEffect } from 'react';
 import Layout from '@theme/Layout';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './chat.module.css';
 
 type Message = {
@@ -50,16 +50,16 @@ export default function Chat(): React.ReactElement {
     setIsLoading(true);
 
     try {
-      // ✅ FIXED: Call backend API with correct schema
-      const response = await fetch('http://localhost:8000/chat', {
+      // ✅ UPDATED: Call live Render backend
+      const response = await fetch('https://ai-and-robot-book5-backend.onrender.com/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          query: currentQuestion,    // ✅ Changed from "message" to "query"
-          user_id: null,             // ✅ Added required field
-          chapter_id: null           // ✅ Added required field
+          query: currentQuestion,
+          user_id: null,
+          chapter_id: null
         }),
       });
 
@@ -69,7 +69,6 @@ export default function Chat(): React.ReactElement {
 
       const data = await response.json();
 
-      // ✅ FIXED: Use correct response field
       const aiMessage: Message = {
         id: (Date.now() + 1).toString(),
         text: data.response || 'I received your question but could not generate a response.',
@@ -82,7 +81,7 @@ export default function Chat(): React.ReactElement {
       console.error('Chat error:', error);
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: 'Sorry, I encountered an error. Please make sure the backend is running at http://localhost:8000',
+        text: 'Sorry, I encountered an error. Please try again. The backend may be waking up (first request takes 30-60 seconds).',
         sender: 'ai',
         timestamp: new Date(),
       };
